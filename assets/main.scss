@@ -1,36 +1,158 @@
 ---
 ---
-/*
-@import "variables";
-@import "base";
-@import "layout";
-@import "syntax-highlighting";
-*/
 
-// Add your custom styles below this line
+// Variables
+$primary-color: #f58506;
+$secondary-color: #333;
+$bg-dark: #1a1a1a;
+$text-light: #f4f4f4;
 
+// Base styles
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: $bg-dark;
+  color: $text-light;
   line-height: 1.6;
-  color: #333;
 }
 
-header {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  text-align: center;
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
 }
 
-main {
-  padding: 2rem;
+.text-primary {
+  color: $primary-color !important;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
+.text-muted {
+  color: darken($text-light, 20%) !important;
+}
+
+// Layout
+.container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.col-md-3, .col-md-6, .col-md-9 {
+  padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+// Header
+header {
+  margin-top: 2rem;
+  
+  img {
+    border: 3px solid $primary-color;
+  }
+}
+
+// Cards
+.card {
+  background-color: lighten($bg-dark, 5%);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    color: $primary-color;
+  }
+}
+
+// Badges
+.badge {
+  background-color: $primary-color;
+  color: $bg-dark;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  &-primary {
+    background-color: $primary-color;
+    color: $bg-dark;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Links
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: lighten($primary-color, 10%);
+  }
+}
+
+// Utilities
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+// Footer
+footer {
+  margin-top: 3rem;
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid $secondary-color;
 }
