@@ -1,31 +1,6 @@
 ---
 ---
-// Variables
-$primary-color: #f58506;
-$secondary-color: #333;
-$bg-dark: #1a1a1a;
-$text-light: #f4f4f4;
-
-// Base styles
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: $bg-dark;
-  color: $text-light;
-  line-height: 1.6;
-}
-
-// Typography
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1rem;
-}
-
-.text-primary {
-  color: $primary-color !important;
-}
-
-.text-muted {
-  color: darken($text-light, 20%) !important;
-}
+// ... (keep all the previous styles)
 
 // Layout
 .container {
@@ -41,31 +16,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: -15px;
 }
 
-.col-md-3, .col-md-6, .col-md-9 {
+.col-12, .col-md-6 {
   padding: 15px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-  .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
   .col-md-6 {
     flex: 0 0 50%;
     max-width: 50%;
-  }
-  .col-md-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
-  }
-}
-
-// Header
-header {
-  margin-top: 2rem;
-  
-  img {
-    border: 3px solid $primary-color;
   }
 }
 
@@ -76,8 +35,7 @@ header {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  max-width: 540px;
-  margin: 0 auto;
+  height: 100%; // Ensure all cards in a row have the same height
 
   &:hover {
     transform: translateY(-5px);
@@ -85,6 +43,9 @@ header {
 
   .card-body {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .card-title {
@@ -98,68 +59,13 @@ header {
   }
 }
 
-// Badges
-.badge {
-  background-color: $primary-color;
-  color: $bg-dark;
-  padding: 0.5em 1em;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-right: 0.5rem;
+// ... (keep all the other styles)
+
+// Add this at the end of the file
+.card-text {
+  flex-grow: 1; // Allow the text to expand and push the button to the bottom
 }
 
-// Buttons
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-  &-primary {
-    background-color: $primary-color;
-    color: $bg-dark;
-
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
-  }
-}
-
-// Links
-a {
-  color: $primary-color;
-  text-decoration: none;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: lighten($primary-color, 10%);
-  }
-}
-
-// Utilities
-.mt-5 {
-  margin-top: 3rem;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem;
-}
-
-.rounded-circle {
-  border-radius: 50%;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-// Footer
-footer {
-  margin-top: 3rem;
-  padding: 1rem 0;
-  text-align: center;
-  border-top: 1px solid $secondary-color;
+.btn-primary {
+  align-self: flex-start; // Align the button to the start of the flex container
 }
