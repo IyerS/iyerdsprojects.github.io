@@ -1,6 +1,5 @@
 ---
 ---
-
 // Variables
 $primary-color: #f58506;
 $secondary-color: #333;
@@ -77,6 +76,8 @@ header {
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  max-width: 540px;
+  margin: 0 auto;
 
   &:hover {
     transform: translateY(-5px);
@@ -88,6 +89,12 @@ header {
 
   .card-title {
     color: $primary-color;
+  }
+
+  .card-img-top {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    width: 100%;
   }
 }
 
