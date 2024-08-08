@@ -12,6 +12,8 @@ title: Sundaresh Iyer
 description: "Hi I'm Sundaresh, and I'm a Data Scientist and a Business Analyst.  My portfolio showcased here focuses on interesting data science projects I've undertaken, with a strong emphasis on business impact. Please visit my Github & LinkedIn pages (or download my Resume) by using the links below!"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+timezone: America/Vancouver
+future: false
 
 #-------------------------------
 # About Section
