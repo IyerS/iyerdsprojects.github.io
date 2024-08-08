@@ -30,8 +30,8 @@
 <main class="container mt-5">
     <div class="row">
         {% for post in site.posts %}
-        <div class="col-md-6 mb-4">
-            <div class="card bg-secondary">
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card">
                 {% if post.image %}
                 <img src="{{ post.image | relative_url }}" class="card-img-top" alt="{{ post.title }}">
                 {% endif %}
